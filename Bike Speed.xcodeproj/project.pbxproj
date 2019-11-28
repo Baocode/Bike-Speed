@@ -13,6 +13,9 @@
 		FE122A612319217A002E5B7B /* Bike_Speed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE122A5F2319217A002E5B7B /* Bike_Speed.xcdatamodeld */; };
 		FE122A632319217D002E5B7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE122A622319217D002E5B7B /* Assets.xcassets */; };
 		FE122A662319217D002E5B7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE122A642319217D002E5B7B /* LaunchScreen.storyboard */; };
+		FE5748822322B9E0000D6444 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5748812322B9E0000D6444 /* LocationManager.swift */; };
+		FEA981EF2388551B0047E293 /* DistanceMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA981EE2388551B0047E293 /* DistanceMgr.swift */; };
+		FECF2F15235F2054004018DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECF2F14235F2054004018DD /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		FE122A622319217D002E5B7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE122A652319217D002E5B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE122A672319217D002E5B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE5748812322B9E0000D6444 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FEA981EE2388551B0047E293 /* DistanceMgr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceMgr.swift; sourceTree = "<group>"; };
+		FECF2F14235F2054004018DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FECF2F15235F2054004018DD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,7 @@
 			children = (
 				FE122A572319217A002E5B7B /* Bike Speed */,
 				FE122A562319217A002E5B7B /* Products */,
+				FECF2F13235F2054004018DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +71,18 @@
 				FE122A642319217D002E5B7B /* LaunchScreen.storyboard */,
 				FE122A672319217D002E5B7B /* Info.plist */,
 				FE122A5F2319217A002E5B7B /* Bike_Speed.xcdatamodeld */,
+				FE5748812322B9E0000D6444 /* LocationManager.swift */,
+				FEA981EE2388551B0047E293 /* DistanceMgr.swift */,
 			);
 			path = "Bike Speed";
+			sourceTree = "<group>";
+		};
+		FECF2F13235F2054004018DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FECF2F14235F2054004018DD /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE5748822322B9E0000D6444 /* LocationManager.swift in Sources */,
 				FE122A612319217A002E5B7B /* Bike_Speed.xcdatamodeld in Sources */,
 				FE122A5B2319217A002E5B7B /* ViewController.swift in Sources */,
+				FEA981EF2388551B0047E293 /* DistanceMgr.swift in Sources */,
 				FE122A592319217A002E5B7B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
