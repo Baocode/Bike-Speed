@@ -10,11 +10,17 @@ import Foundation
 import CoreLocation
 class DistanceMgr {
     var distanceTotale: CLLocationDistance = CLLocationDistance()
+    var prevDist: CLLocationDistance = CLLocationDistance()
     var previousPosition: CLLocation? = nil
  
     func calculDistanceTotale( actualPosition: CLLocation) -> CLLocationDistance {
         if let prevPosition = previousPosition{
-            distanceTotale = distanceTotale + actualPosition.distance(from: prevPosition)/100
+            let dist = actualPosition.distance(from: prevPosition)/100
+            if dist != prevDist
+            {
+                distanceTotale = distanceTotale + dist
+            }   
+            prevDist = dist
             return distanceTotale
         }else{
             previousPosition = actualPosition

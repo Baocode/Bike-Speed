@@ -169,16 +169,39 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfE-Kv-jhg">
                                 <rect key="frame" x="0.0" y="263" width="375" height="549"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SW-YA-WLH" customClass="RoundButton" customModule="Bike_Speed" customModuleProvider="target">
+                                <rect key="frame" x="27" y="717.33333333333337" width="60" height="58.666666666666629"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="51L-2p-4nW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="pause.circle" catalog="system">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cLb-6x-SVp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0FK-ro-PCV"/>
                             <constraint firstItem="cLb-6x-SVp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GH3-Bq-oFp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9SW-YA-WLH" secondAttribute="bottom" constant="1.6666666666666288" id="JRz-Ug-OP2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bfE-Kv-jhg" secondAttribute="trailing" id="Js2-xV-LlI"/>
                             <constraint firstItem="cLb-6x-SVp" firstAttribute="bottom" secondItem="bfE-Kv-jhg" secondAttribute="top" id="Mrr-kG-Kms"/>
+                            <constraint firstItem="9SW-YA-WLH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="ZNv-Hy-A6D"/>
                             <constraint firstItem="bfE-Kv-jhg" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Zyu-P7-TdX"/>
                             <constraint firstItem="bfE-Kv-jhg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dKX-aP-CD5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="cLb-6x-SVp" secondAttribute="top" id="rTH-QG-d0P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9SW-YA-WLH" secondAttribute="trailing" constant="288" id="uyr-kA-Frc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -194,4 +217,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="137.4384236453202"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pause.circle" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

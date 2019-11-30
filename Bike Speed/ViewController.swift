@@ -32,7 +32,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    
+        
+        UIApplication.shared.isIdleTimerDisabled = true //empèche la mise en veille de l'écran
         
         locationManager.delegate = self
         if NSString(string:UIDevice.current.systemVersion).doubleValue > 8 {
@@ -82,9 +83,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             }
                 altitude = location.altitude
             }
-                print("speed = \(speed)");
-                speedLabelUI.text = String(format: "%.2f", speed)
-                altitudeLabelUI.text = String(format: "%.2f", altitude)
+        actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
+        speedLabelUI.text = String(format: "%.2f", speed)
+        altitudeLabelUI.text = String(format: "%.2f", altitude)
+        distanceLabelUi.text = String(format: "%.2f", actualDistance)
         map.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
     }
     
