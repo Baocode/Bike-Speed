@@ -1,0 +1,67 @@
+<gpx>
+   <wpt lon="-78.4814684" lat="38.0283608">
+    <name>TP001</name>
+    <ele>139.36167907715</ele>
+    <time>2017-05-18T12:20:25Z</time>
+   </wpt>
+   <wpt lon="-78.48174" lat="38.02844">
+    <name>TP002</name>
+    <ele>139.58670043945</ele>
+    <time>2017-05-18T12:20:37Z</time>
+   </wpt>
+   <wpt lon="-78.4817437" lat="38.0284428">
+    <name>TP003</name>
+    <ele>139.79161071777</ele>
+    <time>2017-05-18T12:20:39Z</time>
+   </wpt>
+   <wpt lon="-78.48159" lat="38.02877">
+    <name>TP004</name>
+    <ele>139.78443908691</ele>
+    <time>2017-05-18T12:21:14Z</time>
+   </wpt>
+   <wpt lon="-78.48156" lat="38.02885">
+    <name>TP005</name>
+    <ele>138.47015380859</ele>
+    <time>2017-05-18T12:21:22Z</time>
+   </wpt>
+   <wpt lon="-78.48149" lat="38.02899">
+    <name>TP006</name>
+    <ele>137.04736328125</ele>
+    <time>2017-05-18T12:21:37Z</time>
+   </wpt>
+   <wpt lon="-78.48147" lat="38.02902">
+    <name>TP007</name>
+    <ele>136.67156982422</ele>
+    <time>2017-05-18T12:21:40Z</time>
+   </wpt>
+   <wpt lon="-78.48144" lat="38.02913">
+    <name>TP008</name>
+    <ele>137.19146728516</ele>
+    <time>2017-05-18T12:21:51Z</time>
+   </wpt>
+   <wpt lon="-78.4811" lat="38.02981">
+    <name>TP009</name>
+    <ele>139.01919555664</ele>
+    <time>2017-05-18T12:23:04Z</time>
+   </wpt>
+   <wpt lon="-78.48096" lat="38.03007">
+    <name>TP010</name>
+    <ele>140.29809570312</ele>
+    <time>2017-05-18T12:23:22Z</time>
+   </wpt>
+   <wpt lon="-78.48074" lat="38.03057">
+    <name>TP011</name>
+    <ele>140.81834411621</ele>
+    <time>2017-05-18T12:23:55Z</time>
+   </wpt>
+   <wpt lon="-78.48058" lat="38.03094">
+    <name>TP012</name>
+    <ele>145.85939025879</ele>
+    <time>2017-05-18T12:24:19Z</time>
+   </wpt>
+   <wpt lon="-78.48054" lat="38.03103">
+    <name>TP013</name>
+    <ele>144.88935852051</ele>
+    <time>2017-05-18T12:24:25Z</time>
+   </wpt>
+</gpx>

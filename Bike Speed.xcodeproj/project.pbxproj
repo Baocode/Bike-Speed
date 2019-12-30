@@ -13,6 +13,7 @@
 		FE122A612319217A002E5B7B /* Bike_Speed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE122A5F2319217A002E5B7B /* Bike_Speed.xcdatamodeld */; };
 		FE122A632319217D002E5B7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE122A622319217D002E5B7B /* Assets.xcassets */; };
 		FE122A662319217D002E5B7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE122A642319217D002E5B7B /* LaunchScreen.storyboard */; };
+		FE35C57623B6853400B389FB /* La Rochelle - N.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FE35C57523B6853400B389FB /* La Rochelle - N.gpx */; };
 		FE5748822322B9E0000D6444 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5748812322B9E0000D6444 /* LocationManager.swift */; };
 		FE6A4C432392FADF00ED3A07 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A4C422392FADF00ED3A07 /* RoundButton.swift */; };
 		FEA981EF2388551B0047E293 /* DistanceMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA981EE2388551B0047E293 /* DistanceMgr.swift */; };
@@ -28,6 +29,10 @@
 		FE122A622319217D002E5B7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE122A652319217D002E5B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE122A672319217D002E5B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE35C57423B682C000B389FB /* La Rochelle - Fouras.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "La Rochelle - Fouras.gpx"; path = "../../../Downloads/La Rochelle - Fouras.gpx"; sourceTree = "<group>"; };
+		FE35C57523B6853400B389FB /* La Rochelle - N.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "La Rochelle - N.gpx"; sourceTree = "<group>"; };
+		FE35C57823B6854600B389FB /* La Rochelle - Fouras.gpx */ = {isa = PBXFileReference; lastKnownFileType = text; path = "La Rochelle - Fouras.gpx"; sourceTree = "<group>"; };
+		FE4D689D23B9F0B5003E54F8 /* Test file.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Test file.gpx"; sourceTree = "<group>"; };
 		FE5748812322B9E0000D6444 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FE6A4C422392FADF00ED3A07 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		FEA981EE2388551B0047E293 /* DistanceMgr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceMgr.swift; sourceTree = "<group>"; };
@@ -49,6 +54,7 @@
 		FE122A4C2319217A002E5B7B = {
 			isa = PBXGroup;
 			children = (
+				FE35C57423B682C000B389FB /* La Rochelle - Fouras.gpx */,
 				FE122A572319217A002E5B7B /* Bike Speed */,
 				FE122A562319217A002E5B7B /* Products */,
 				FECF2F13235F2054004018DD /* Frameworks */,
@@ -66,6 +72,7 @@
 		FE122A572319217A002E5B7B /* Bike Speed */ = {
 			isa = PBXGroup;
 			children = (
+				FE35C57723B6853B00B389FB /* Simulation GPS */,
 				FE122A582319217A002E5B7B /* AppDelegate.swift */,
 				FE122A5A2319217A002E5B7B /* ViewController.swift */,
 				FE122A5C2319217A002E5B7B /* Main.storyboard */,
@@ -78,6 +85,16 @@
 				FE6A4C422392FADF00ED3A07 /* RoundButton.swift */,
 			);
 			path = "Bike Speed";
+			sourceTree = "<group>";
+		};
+		FE35C57723B6853B00B389FB /* Simulation GPS */ = {
+			isa = PBXGroup;
+			children = (
+				FE35C57823B6854600B389FB /* La Rochelle - Fouras.gpx */,
+				FE35C57523B6853400B389FB /* La Rochelle - N.gpx */,
+				FE4D689D23B9F0B5003E54F8 /* Test file.gpx */,
+			);
+			path = "Simulation GPS";
 			sourceTree = "<group>";
 		};
 		FECF2F13235F2054004018DD /* Frameworks */ = {
@@ -148,6 +165,7 @@
 			files = (
 				FE122A662319217D002E5B7B /* LaunchScreen.storyboard in Resources */,
 				FE122A632319217D002E5B7B /* Assets.xcassets in Resources */,
+				FE35C57623B6853400B389FB /* La Rochelle - N.gpx in Resources */,
 				FE122A5E2319217A002E5B7B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
