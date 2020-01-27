@@ -17,6 +17,8 @@
 		FE5748822322B9E0000D6444 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5748812322B9E0000D6444 /* LocationManager.swift */; };
 		FE6A4C432392FADF00ED3A07 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A4C422392FADF00ED3A07 /* RoundButton.swift */; };
 		FEA981EF2388551B0047E293 /* DistanceMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA981EE2388551B0047E293 /* DistanceMgr.swift */; };
+		FEB37E8523DF11A000193192 /* AverageMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB37E8423DF11A000193192 /* AverageMgr.swift */; };
+		FEB37E8923DF171F00193192 /* maxSpeedMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB37E8823DF171F00193192 /* maxSpeedMgr.swift */; };
 		FECF2F15235F2054004018DD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECF2F14235F2054004018DD /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		FE5748812322B9E0000D6444 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FE6A4C422392FADF00ED3A07 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		FEA981EE2388551B0047E293 /* DistanceMgr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceMgr.swift; sourceTree = "<group>"; };
+		FEB37E8423DF11A000193192 /* AverageMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageMgr.swift; sourceTree = "<group>"; };
+		FEB37E8823DF171F00193192 /* maxSpeedMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maxSpeedMgr.swift; sourceTree = "<group>"; };
 		FECF2F14235F2054004018DD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -80,7 +84,9 @@
 				FE122A5F2319217A002E5B7B /* Bike_Speed.xcdatamodeld */,
 				FE5748812322B9E0000D6444 /* LocationManager.swift */,
 				FEA981EE2388551B0047E293 /* DistanceMgr.swift */,
+				FEB37E8423DF11A000193192 /* AverageMgr.swift */,
 				FE6A4C422392FADF00ED3A07 /* RoundButton.swift */,
+				FEB37E8823DF171F00193192 /* maxSpeedMgr.swift */,
 			);
 			path = "Bike Speed";
 			sourceTree = "<group>";
@@ -176,10 +182,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE6A4C432392FADF00ED3A07 /* RoundButton.swift in Sources */,
+				FEB37E8923DF171F00193192 /* maxSpeedMgr.swift in Sources */,
 				FE5748822322B9E0000D6444 /* LocationManager.swift in Sources */,
 				FE122A612319217A002E5B7B /* Bike_Speed.xcdatamodeld in Sources */,
 				FE122A5B2319217A002E5B7B /* ViewController.swift in Sources */,
 				FEA981EF2388551B0047E293 /* DistanceMgr.swift in Sources */,
+				FEB37E8523DF11A000193192 /* AverageMgr.swift in Sources */,
 				FE122A592319217A002E5B7B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
