@@ -19,6 +19,7 @@ class DistanceMgr {
             if dist != prevDist
             {
                 distanceTotale = distanceTotale + dist
+                previousPosition = actualPosition
             }   
             prevDist = dist
             return distanceTotale

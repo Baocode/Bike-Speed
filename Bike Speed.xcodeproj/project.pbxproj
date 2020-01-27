@@ -29,7 +29,6 @@
 		FE122A622319217D002E5B7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE122A652319217D002E5B7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE122A672319217D002E5B7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE35C57423B682C000B389FB /* La Rochelle - Fouras.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "La Rochelle - Fouras.gpx"; path = "../../../Downloads/La Rochelle - Fouras.gpx"; sourceTree = "<group>"; };
 		FE35C57523B6853400B389FB /* La Rochelle - N.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "La Rochelle - N.gpx"; sourceTree = "<group>"; };
 		FE35C57823B6854600B389FB /* La Rochelle - Fouras.gpx */ = {isa = PBXFileReference; lastKnownFileType = text; path = "La Rochelle - Fouras.gpx"; sourceTree = "<group>"; };
 		FE4D689D23B9F0B5003E54F8 /* Test file.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Test file.gpx"; sourceTree = "<group>"; };
@@ -54,7 +53,6 @@
 		FE122A4C2319217A002E5B7B = {
 			isa = PBXGroup;
 			children = (
-				FE35C57423B682C000B389FB /* La Rochelle - Fouras.gpx */,
 				FE122A572319217A002E5B7B /* Bike Speed */,
 				FE122A562319217A002E5B7B /* Products */,
 				FECF2F13235F2054004018DD /* Frameworks */,
