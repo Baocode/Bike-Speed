@@ -17,7 +17,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var speed: CLLocationSpeed = CLLocationSpeed()
     var altitude: CLLocationDistance = CLLocationDistance()
     var actualDistance: CLLocationDistance = CLLocationDistance()
+    var actualAverage: CLLocationSpeed = CLLocationSpeed()
+    var actualMaxSpeed: CLLocationSpeed = CLLocationSpeed()
+    
     var distanceMgr: DistanceMgr = DistanceMgr()
+    var averageMgr : AverageMgr = AverageMgr()
+    var maxSpeedMgr : MaxSpeedMgr = MaxSpeedMgr()
+    
     var previousLocation: CLLocation = CLLocation()
     var pauseOn:Bool = false
     
@@ -27,6 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var altitudeLabelUI: UILabel!
     @IBOutlet weak var distanceLabelUi: UILabel!
     @IBOutlet weak var pauseButtonUI: RoundButton!
+    @IBOutlet weak var averageSpeedLabelUi: UILabel!
+    @IBOutlet weak var maxSpeedLabelUi: UILabel!
     
     
     @IBOutlet weak var map: MKMapView!
@@ -92,12 +100,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 altitude = location.altitude
             if (location.horizontalAccuracy < 5) {
                 actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
+                actualAverage = averageMgr.calculateAverage(currentSpeed: location.speed)
+                actualMaxSpeed = maxSpeedMgr.checkMaxSpeed(actualSpeed: location.speed)
             }
             }
            
             speedLabelUI.text = String(format: "%.2f", speed)
             altitudeLabelUI.text = String(format: "%.2f", altitude)
             distanceLabelUi.text = String(format: "%.2f", actualDistance)
+            averageSpeedLabelUi.text = String(format: "%.2f", actualAverage)
+            maxSpeedLabelUi.text = String(format: "%.2f", actualMaxSpeed)
+            
             map.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
         }
     }
