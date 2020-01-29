@@ -91,17 +91,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let howRecent: TimeInterval = eventDate.timeIntervalSinceNow;
         if (abs(howRecent) < 15.0) {
             // If the event is recent, do something with it.
-            NSLog("latitude %+.6f, longitude %+.6f\n",location.coordinate.latitude, location.coordinate.longitude);
+            //NSLog("latitude %+.6f, longitude %+.6f\n",location.coordinate.latitude, location.coordinate.longitude);
             if (location.speed <= 0){
                 speed = 0
             }else{
                 speed = location.speed*3600/1000;
-            }
-                altitude = location.altitude
-            if (location.horizontalAccuracy < 5) {
-                actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
                 actualAverage = averageMgr.calculateAverage(currentSpeed: location.speed)
                 actualMaxSpeed = maxSpeedMgr.checkMaxSpeed(actualSpeed: location.speed)
+            }
+                altitude = location.altitude
+            if (location.horizontalAccuracy < 6) {
+                actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
             }
             }
            

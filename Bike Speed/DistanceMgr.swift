@@ -15,7 +15,7 @@ class DistanceMgr {
  
     func calculDistanceTotale( actualPosition: CLLocation) -> CLLocationDistance {
         if let prevPosition = previousPosition{
-            let dist = actualPosition.distance(from: prevPosition)/100
+            let dist = actualPosition.distance(from: prevPosition)/1000
             if dist != prevDist
             {
                 distanceTotale = distanceTotale + dist
@@ -25,7 +25,7 @@ class DistanceMgr {
             return distanceTotale
         }else{
             previousPosition = actualPosition
-            distanceTotale = distanceTotale + actualPosition.distance(from: actualPosition)/100
+            distanceTotale = distanceTotale + actualPosition.distance(from: actualPosition)/1000
             return distanceTotale
         }
     }
