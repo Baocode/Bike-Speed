@@ -13,11 +13,11 @@ class MaxSpeedMgr {
     var maxSpeed : CLLocationSpeed = CLLocationSpeed()
     
     func checkMaxSpeed(actualSpeed: CLLocationSpeed) -> CLLocationSpeed {
-        if actualSpeed>maxSpeed{
-            maxSpeed = actualSpeed * 3600/1000
-            return maxSpeed
+        if actualSpeed > maxSpeed{
+            maxSpeed = actualSpeed
+            return (maxSpeed * 3600/1000)
         }else {
-            return maxSpeed
+            return (maxSpeed * 3600/1000)
         }
     }
 }
