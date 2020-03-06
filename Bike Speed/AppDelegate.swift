@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import CoreLocation
+import BackgroundTasks
 
 
 @UIApplicationMain
@@ -47,6 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        
+    }
+    
+    
 
     // MARK: - Core Data stack
 

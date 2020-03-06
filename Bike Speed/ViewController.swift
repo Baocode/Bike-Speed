@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import BackgroundTasks
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
 
@@ -82,8 +83,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        updateInformation(location: manager.location!);
+        if let lastLocation = locations.last{
+        if UIApplication.shared.applicationState == .active {
+            updateInformation(location: lastLocation);
+        } else {
+            backGroundUpdateInformation(location: lastLocation)
+            }
+        }
     }
+    
+    func backGroundUpdateInformation(location: CLLocation){
+    if !pauseOn {
+    let eventDate: Date = location.timestamp;
+    let howRecent: TimeInterval = eventDate.timeIntervalSinceNow;
+    if (abs(howRecent) < 15.0) {
+        // If the event is recent, do something with it.
+        if (location.speed <= 0){
+            speed = 0
+        }else{
+            speed = location.speed*3600/1000;
+            actualAverage = averageMgr.calculateAverage(currentSpeed: location.speed)
+            actualMaxSpeed = maxSpeedMgr.checkMaxSpeed(actualSpeed: location.speed)
+        }
+            altitude = location.altitude
+        if (location.horizontalAccuracy < 6) {
+            actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
+        }
+        }
+        }
+    }
+
     
     func updateInformation(location: CLLocation){
         if !pauseOn {

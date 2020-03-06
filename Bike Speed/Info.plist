@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>fr.baocode.Bike-Speed.maxSpeedControl</string>
+		<string>fr.baocode.Bike-Speed.averageSpeedCalculattion</string>
+		<string>fr.baocode.Bike-Speed.distanceCalculation</string>
+		<string>fr.baocode.Bike-Speed.timerRunning</string>
+	</array>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -36,9 +43,9 @@
 		<string>MKDirectionsModeRideShare</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<string>pour continuer à suivre votre activité même en arrière plan </string>
 	<key>NSLocationUsageDescription</key>
-	<string>L'utilisation de vos données de localisation permet de réaliser le traçage de vos activités de vélo</string>
+	<string>L'utilisation de vos données de localisation permet de réaliser le suivi de vos en vélo</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Vos donnés de localisation sont utilisées en arrière plan lorsque l'application est lancé </string>
 	<key>UIBackgroundModes</key>
