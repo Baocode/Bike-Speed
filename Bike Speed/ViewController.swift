@@ -12,8 +12,8 @@ import CoreLocation
 import BackgroundTasks
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-
-
+    
+    
     let locationManager = CLLocationManager()
     var speed: CLLocationSpeed = CLLocationSpeed()
     var altitude: CLLocationDistance = CLLocationDistance()
@@ -24,6 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var distanceMgr: DistanceMgr = DistanceMgr()
     var averageMgr : AverageMgr = AverageMgr()
     var maxSpeedMgr : MaxSpeedMgr = MaxSpeedMgr()
+    var timerMgr: TimerMgr = TimerMgr()
     
     var previousLocation: CLLocation = CLLocation()
     var pauseOn:Bool = false
@@ -36,6 +37,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var pauseButtonUI: RoundButton!
     @IBOutlet weak var averageSpeedLabelUi: UILabel!
     @IBOutlet weak var maxSpeedLabelUi: UILabel!
+    @IBOutlet weak var hoursLabelUI: UILabel!
+    @IBOutlet weak var minutsLabelUI: UILabel!
+    @IBOutlet weak var secondsLabelUI: UILabel!
     
     
     @IBOutlet weak var map: MKMapView!
@@ -58,25 +62,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         if let location = locationManager.location{
             updateInformation(location: location)
+            timerMgr.startTimer()
         }
-        
-
+        startTimerUi()
     }
     
+    
+    
     @IBAction func pauseButton(_ sender: Any) {
-
+        
         if pauseOn {
             locationManager.startUpdatingLocation()
-            pauseButtonUI.backgroundColor = UIColor.white
+            pauseButtonUI.tintColor = UIColor.white
             pauseOn = false
+            startTimerUi()
         }else{
             pauseOn = true
             locationManager.stopUpdatingLocation()
-            pauseButtonUI.backgroundColor = UIColor.red
+            pauseButtonUI.tintColor = UIColor.red
         }
-        
     }
-    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
@@ -84,72 +89,86 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let lastLocation = locations.last{
-        if UIApplication.shared.applicationState == .active {
-            updateInformation(location: lastLocation);
-        } else {
-            backGroundUpdateInformation(location: lastLocation)
+            if UIApplication.shared.applicationState == .active {
+                updateInformation(location: lastLocation);
+            } else {
+                backGroundUpdateInformation(location: lastLocation)
             }
         }
     }
     
     func backGroundUpdateInformation(location: CLLocation){
-    if !pauseOn {
-    let eventDate: Date = location.timestamp;
-    let howRecent: TimeInterval = eventDate.timeIntervalSinceNow;
-    if (abs(howRecent) < 15.0) {
-        // If the event is recent, do something with it.
-        if (location.speed <= 0){
-            speed = 0
-        }else{
-            speed = location.speed*3600/1000;
-            actualAverage = averageMgr.calculateAverage(currentSpeed: location.speed)
-            actualMaxSpeed = maxSpeedMgr.checkMaxSpeed(actualSpeed: location.speed)
-        }
-            altitude = location.altitude
-        if (location.horizontalAccuracy < 6) {
-            actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
-        }
-        }
+        
+        if !pauseOn {
+            let eventDate: Date = location.timestamp;
+            let howRecent: TimeInterval = eventDate.timeIntervalSinceNow;
+            print(timerMgr.time)
+            if (abs(howRecent) < 15.0) {
+                // If the event is recent, do something with it.
+                if (location.speed <= 0){
+                    speed = 0
+                }else{
+                    speed = location.speed*3600/1000;
+                    actualAverage = averageMgr.calculateAverage(currentSpeed: location.speed)
+                    actualMaxSpeed = maxSpeedMgr.checkMaxSpeed(actualSpeed: location.speed)
+                }
+                altitude = location.altitude
+                if (location.horizontalAccuracy < 6) {
+                    actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
+                }
+            }
         }
     }
-
+    
     
     func updateInformation(location: CLLocation){
         if !pauseOn {
-        let eventDate: Date = location.timestamp;
-        let howRecent: TimeInterval = eventDate.timeIntervalSinceNow;
-        if (abs(howRecent) < 15.0) {
-            // If the event is recent, do something with it.
-            //NSLog("latitude %+.6f, longitude %+.6f\n",location.coordinate.latitude, location.coordinate.longitude);
-            if (location.speed <= 0){
-                speed = 0
-            }else{
-                speed = location.speed*3600/1000;
-                actualAverage = averageMgr.calculateAverage(currentSpeed: location.speed)
-                actualMaxSpeed = maxSpeedMgr.checkMaxSpeed(actualSpeed: location.speed)
-            }
+            let eventDate: Date = location.timestamp;
+            let howRecent: TimeInterval = eventDate.timeIntervalSinceNow;
+            if (abs(howRecent) < 15.0) {
+                // If the event is recent, do something with it.
+                //NSLog("latitude %+.6f, longitude %+.6f\n",location.coordinate.latitude, location.coordinate.longitude);
+                if (location.speed <= 0){
+                    speed = 0
+                }else{
+                    speed = location.speed*3600/1000;
+                    actualAverage = averageMgr.calculateAverage(currentSpeed: location.speed)
+                    actualMaxSpeed = maxSpeedMgr.checkMaxSpeed(actualSpeed: location.speed)
+                }
                 altitude = location.altitude
-            if (location.horizontalAccuracy < 6) {
-                actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
+                if (location.horizontalAccuracy < 6) {
+                    actualDistance = distanceMgr.calculDistanceTotale(actualPosition: location)
+                }
             }
-            }
-           
+            
             speedLabelUI.text = String(format: "%.2f", speed)
             altitudeLabelUI.text = String(format: "%.2f", altitude)
             distanceLabelUi.text = String(format: "%.2f", actualDistance)
             averageSpeedLabelUi.text = String(format: "%.2f", actualAverage)
             maxSpeedLabelUi.text = String(format: "%.2f", actualMaxSpeed)
-            
+                      
             map.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
         }
     }
-
+    
     
     private func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status != CLAuthorizationStatus.denied{
-          locationManager.startUpdatingLocation()
-      }
+            locationManager.startUpdatingLocation()
+        }
     }
+    
+    private func startTimerUi() {
 
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            self.hoursLabelUI.text = ("\(self.timerMgr.chrono.hours)")
+            self.minutsLabelUI.text = ("\(self.timerMgr.chrono.minutes)")
+            self.secondsLabelUI.text = ("\(self.timerMgr.chrono.second)")
+            if self.pauseOn {
+                timer.invalidate()
+            }
+        }
+    }
+    
 }
 
