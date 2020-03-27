@@ -13,10 +13,11 @@ class DistanceMgr {
     var prevDist: CLLocationDistance = CLLocationDistance()
     var previousPosition: CLLocation? = nil
  
+    //calcul de la distance
     func calculDistanceTotale( actualPosition: CLLocation) -> CLLocationDistance {
         if let prevPosition = previousPosition{
             let dist = actualPosition.distance(from: prevPosition)/1000
-            if dist != prevDist
+            if dist != prevDist && dist > 0 // ajout de la nouvelle distance si et seulement le déplacement est réel
             {
                 distanceTotale = distanceTotale + dist
                 previousPosition = actualPosition

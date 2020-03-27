@@ -80,14 +80,12 @@
 			children = (
 				FE35C57723B6853B00B389FB /* Simulation GPS */,
 				FE122A582319217A002E5B7B /* AppDelegate.swift */,
-				FE122A5A2319217A002E5B7B /* ViewController.swift */,
-				FE122A5C2319217A002E5B7B /* Main.storyboard */,
 				FE122A622319217D002E5B7B /* Assets.xcassets */,
-				FE122A642319217D002E5B7B /* LaunchScreen.storyboard */,
 				FE122A672319217D002E5B7B /* Info.plist */,
 				FE122A5F2319217A002E5B7B /* Bike_Speed.xcdatamodeld */,
+				FE122A5A2319217A002E5B7B /* ViewController.swift */,
 				FE5748812322B9E0000D6444 /* LocationManager.swift */,
-				FE6A4C422392FADF00ED3A07 /* RoundButton.swift */,
+				FEC0D9DF242E544E009F6F1C /* View */,
 				FECA759B2429FABD0065A2A0 /* Compteur Mgr */,
 			);
 			path = "Bike Speed";
@@ -101,6 +99,16 @@
 				FE4D689D23B9F0B5003E54F8 /* Test file.gpx */,
 			);
 			path = "Simulation GPS";
+			sourceTree = "<group>";
+		};
+		FEC0D9DF242E544E009F6F1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE122A5C2319217A002E5B7B /* Main.storyboard */,
+				FE122A642319217D002E5B7B /* LaunchScreen.storyboard */,
+				FE6A4C422392FADF00ED3A07 /* RoundButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FECA759B2429FABD0065A2A0 /* Compteur Mgr */ = {
