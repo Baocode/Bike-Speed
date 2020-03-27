@@ -161,10 +161,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     private func startTimerUi() {
 
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-            self.hoursLabelUI.text = ("\(self.timerMgr.chrono.hours)")
-            self.minutsLabelUI.text = ("\(self.timerMgr.chrono.minutes)")
-            self.secondsLabelUI.text = ("\(self.timerMgr.chrono.second)")
-            if self.pauseOn {
+            if !self.pauseOn {
+                if self.timerMgr.chrono.hours < 10{
+                    self.hoursLabelUI.text = ("0\(self.timerMgr.chrono.hours)")
+                }else {
+                    self.hoursLabelUI.text = ("\(self.timerMgr.chrono.hours)")
+                }
+                if self.timerMgr.chrono.minutes < 10{
+                    self.minutsLabelUI.text = ("0\(self.timerMgr.chrono.minutes)")
+                }else {
+                    self.minutsLabelUI.text = ("\(self.timerMgr.chrono.minutes)")
+                }
+                if self.timerMgr.chrono.second < 10{
+                    self.secondsLabelUI.text = ("0\(self.timerMgr.chrono.second)")
+                }else {
+                    self.secondsLabelUI.text = ("\(self.timerMgr.chrono.second)")
+                }
+            }
+           else {
                 timer.invalidate()
             }
         }
