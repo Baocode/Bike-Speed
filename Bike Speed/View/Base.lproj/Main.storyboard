@@ -1,13 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jWk-zq-qMm">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Historique-->
+        <scene sceneID="nTF-3Z-SNd">
+            <objects>
+                <viewController id="dtM-m5-T2Y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dx-tA-Fzk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5v9-GK-qzO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Historique" image="history-Light" selectedImage="history-selected-2" id="GQi-Qd-I8f"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmi-y5-fpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-77" y="-360"/>
+        </scene>
+        <!--Lancer-->
+        <scene sceneID="oSg-Uz-1hM">
+            <objects>
+                <viewController id="xvT-GV-r02" customClass="LunchRideViewController" customModule="Bike_Speed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QSh-3f-tfT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bC2-4n-gAJ">
+                                <rect key="frame" x="122" y="258" width="171" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="play-button-white"/>
+                                <connections>
+                                    <action selector="lunchRideAction:" destination="xvT-GV-r02" eventType="touchUpInside" id="LgV-3S-bwd"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="YxP-yJ-vml"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MJq-Dx-lZS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Lancer" image="play-butto-selected2" id="Rs0-sn-1ae"/>
+                    <navigationItem key="navigationItem" id="3D1-fj-Tzz"/>
+                    <connections>
+                        <outlet property="lunchRideButton" destination="bC2-4n-gAJ" id="Eix-Kx-AJK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGB-rk-de0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-68" y="-1017"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="th5-CF-gMW">
+            <objects>
+                <tabBarController id="jWk-zq-qMm" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="8mS-dj-Y3J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="Color-Highlight-2"/>
+                        <color key="selectedImageTintColor" name="Color-Highlight-2"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xvT-GV-r02" kind="relationship" relationship="viewControllers" id="mth-qS-TAH"/>
+                        <segue destination="dtM-m5-T2Y" kind="relationship" relationship="viewControllers" id="94v-gt-cx3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxQ-6t-5Iv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-996" y="-686"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -226,9 +296,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SW-YA-WLH" customClass="RoundButton" customModule="Bike_Speed" customModuleProvider="target">
-                                <rect key="frame" x="16" y="656" width="60" height="59.666666666666629"/>
+                                <rect key="frame" x="16" y="657" width="60" height="58.666666666666629"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="cUp-BN-GWP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="cUp-BN-GWP"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="duI-XU-BYw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -248,18 +318,35 @@
                                     <action selector="pauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUX-sM-G2w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hJ-Hd-vSW">
+                                <rect key="frame" x="334" y="657" width="60" height="58.666666666666629"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="KOj-rf-uWV"/>
+                                    <constraint firstAttribute="width" constant="60" id="MP2-vS-jex"/>
+                                </constraints>
+                                <color key="tintColor" name="Color-Main-light"/>
+                                <state key="normal" backgroundImage="stop.circle" catalog="system">
+                                    <color key="titleColor" name="Color-Main-light"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xvT-GV-r02" kind="presentation" modalPresentationStyle="fullScreen" id="ct9-em-u51"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cLb-6x-SVp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0FK-ro-PCV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4hJ-Hd-vSW" secondAttribute="trailing" constant="20" id="5WP-9Y-MqN"/>
                             <constraint firstItem="cLb-6x-SVp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GH3-Bq-oFp"/>
                             <constraint firstItem="9SW-YA-WLH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bfL-Zv-0W4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9SW-YA-WLH" secondAttribute="bottom" constant="20" id="dZx-Qm-h8S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cLb-6x-SVp" secondAttribute="bottom" id="oJD-rI-bSN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4hJ-Hd-vSW" secondAttribute="bottom" constant="20" id="oJx-hJ-Szb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="cLb-6x-SVp" secondAttribute="top" id="rTH-QG-d0P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Lnb-32-w5U"/>
                     <connections>
                         <outlet property="altitudeLabelUI" destination="kJd-Sb-gRC" id="EFb-SB-YGX"/>
                         <outlet property="averageSpeedLabelUi" destination="sG7-fr-5Tn" id="ceo-Pl-GuE"/>
@@ -275,10 +362,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="136.14130434782609"/>
+            <point key="canvasLocation" x="724.63768115942037" y="-1016.5760869565219"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ct9-em-u51"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="history-Light" width="24" height="24"/>
+        <image name="history-selected-2" width="24" height="24"/>
         <image name="pause.circle" catalog="system" width="128" height="121"/>
+        <image name="play-butto-selected2" width="24" height="24"/>
+        <image name="play-button-white" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="stop.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="Color-Highlight-2">
+            <color red="0.92941176470588238" green="0.41568627450980394" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color-Main-light">
+            <color red="0.94117647058823528" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
