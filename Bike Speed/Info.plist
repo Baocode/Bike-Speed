@@ -33,8 +33,12 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array>
@@ -47,7 +51,7 @@
 	<key>NSLocationUsageDescription</key>
 	<string>L'utilisation de vos données de localisation permet de réaliser le suivi de vos en vélo</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Vos donnés de localisation sont utilisées en arrière plan lorsque l'application est lancé </string>
+	<string>Vos donnés de localisation sont utilisées en arrière plan lorsque l'application est lancé afin de suivre votre parcourt vélo</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

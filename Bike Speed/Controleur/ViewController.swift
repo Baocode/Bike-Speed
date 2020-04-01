@@ -34,6 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var altitudeLabelUI: UILabel!
     @IBOutlet weak var distanceLabelUi: UILabel!
     @IBOutlet weak var pauseButtonUI: RoundButton!
+    @IBOutlet weak var stopButtonUI: RoundButton!
     @IBOutlet weak var averageSpeedLabelUi: UILabel!
     @IBOutlet weak var maxSpeedLabelUi: UILabel!
     @IBOutlet weak var hoursLabelUI: UILabel!
@@ -75,13 +76,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func pauseButton(_ sender: Any) {
         if pauseOn {
             locationManager.startUpdatingLocation()
-            pauseButtonUI.tintColor = UIColor.white
+            pauseButtonUI.backgroundColor = UIColor.init(named: "Color-Highlight-2")
             pauseOn = false
             chronoUITimerMgr()
         }else{
             pauseOn = true
             locationManager.stopUpdatingLocation()
-            pauseButtonUI.tintColor = UIColor.red
+            pauseButtonUI.backgroundColor = UIColor.init(named: "Color-highlight")
         }
     }
     
